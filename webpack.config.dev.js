@@ -28,18 +28,20 @@ export default {
         new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
-        loader: [{
-            test: /\.js?$/,
-            loader: ['babel-loader'],
-            include: PATHS.src
-        },
-        {
-            test: /(\.css)$/,
-            loader: ['style-loader', 'css-loader']
-        },
-        {
-            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-            loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
-        }]
+        rules: [
+            {
+                test: /\.js?$/,
+                loader: ['babel-loader'],
+                include: PATHS.src
+            },
+            {
+                test: /(\.css)$/,
+                loader: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+            }
+        ]
     }
 };

@@ -1,10 +1,6 @@
-//This file works to let webpack now that we are going to user certain "presets"
-
 {
-    "presets": ["react","es2015", "stage-0"],
-    "env":{
-        "development":{
-            "presets":["react-hmre"] //--> Para que se actualice el archivo sin refrescar la pagina
-        }
-    }
+    "presets": ["@babel/env", "@babel/react"],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties"
+    ]
 }
